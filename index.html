@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Master Reps</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="datetime">
+    <div class="date" id="currentDate"></div>
+    <div class="time" id="currentTime"></div>
+  </div>
+
+  <div class="socials">
+    <div class="social-btn">
+      <i class="fab fa-discord"></i>
+    </div>
+    <div class="social-btn">
+      <i class="fab fa-tiktok"></i>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <header class="logo">
+    <span class="red">MASTER</span><span class="white">REPS</span>
+  </header>
+
+  <div class="modal">
+    <button class="close">×</button>
+
+    <h2>Skonfiguruj swoje doświadczenie</h2>
+
+    <div class="section">
+      <p>WYBIERZ JĘZYK / CHOOSE LANGUAGE</p>
+      <div class="options">
+        <button class="active">PL - Polski</button>
+        <button>EN - English</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <p>WALUTA / CURRENCY</p>
+      <div class="options">
+        <button class="active">PLN (zł)</button>
+        <button>USD ($)</button>
+        <button>CNY (¥)</button>
+      </div>
+    </div>
+
+    <button class="next-btn">Przejdź dalej →</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ========== PRZYCISK "PRZEJDŹ DALEJ" ==========
+      const nextButton = document.querySelector('.next-btn');
+      if (nextButton) {
+        nextButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'home.html';
+        });
+      }
+
+      // ========== LINKI SPOŁECZNOŚCIOWE ==========
+      const discordBtn = document.querySelector('.socials .social-btn:first-child');
+      const tiktokBtn = document.querySelector('.socials .social-btn:last-child');
+
+      if (discordBtn) {
+        discordBtn.addEventListener('click', function() {
+          window.open('https://discord.gg/5vnqmH3rWR', '_blank');
+        });
+      }
+
+      if (tiktokBtn) {
+        tiktokBtn.addEventListener('click', function() {
+          window.open('https://www.tiktok.com/@rafxrep', '_blank');
+        });
+      }
+
+      // ========== OBSŁUGA PRZYCISKÓW JĘZYKA I WALUTY ==========
+      const allOptionButtons = document.querySelectorAll('.options button');
+      allOptionButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const parentOptions = this.closest('.options');
+          if (parentOptions) {
+            const buttonsInGroup = parentOptions.querySelectorAll('button');
+            buttonsInGroup.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // Ustawienie domyślnych active
+      const firstLang = document.querySelector('.section:first-child .options button');
+      if (firstLang && !document.querySelector('.section:first-child .options button.active')) {
+        firstLang.classList.add('active');
+      }
+
+      const firstCurr = document.querySelector('.section:last-child .options button');
+      if (firstCurr && !document.querySelector('.section:last-child .options button.active')) {
+        firstCurr.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

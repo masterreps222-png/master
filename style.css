@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at 20% 20%, #1a0000, #000);
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔴 Animated glow background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,0,0,0.25), transparent);
+  filter: blur(120px);
+  animation: moveGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(-100px, -100px); }
+  100% { transform: translate(200px, 150px); }
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 60px;
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 6px;
+}
+
+.logo .red {
+  color: #ff1a1a;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { text-shadow: 0 0 10px #ff0000; }
+  50% { text-shadow: 0 0 30px #ff0000; }
+}
+
+/* MODAL */
+.modal {
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: blur(25px);
+  border-radius: 24px;
+  padding: 35px;
+  width: 400px;
+  position: relative;
+
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.2),
+    inset 0 0 20px rgba(255,0,0,0.05);
+
+  animation: fadeIn 0.8s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ICON */
+.icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 25px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ff0000, #300000);
+  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+/* TEXT */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.section {
+  margin-top: 25px;
+}
+
+.section p {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  gap: 12px;
+}
+
+.options button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  transform: scale(1);
+}
+
+/* hover effect */
+.options button:hover {
+  transform: scale(1.05);
+  background: #1f1f1f;
+  color: white;
+}
+
+/* ACTIVE */
+.options button.active {
+  background: linear-gradient(145deg, #ff1a1a, #990000);
+  color: white;
+  box-shadow:
+    0 0 15px rgba(255,0,0,0.7),
+    inset 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* CLICK ANIMATION */
+.options button:active {
+  transform: scale(0.95);
+}
+/* SOCIALS (prawa strona) */
+.socials {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(145deg, #ff0000, #600000);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  box-shadow: 0 0 20px rgba(255,0,0,0.5);
+  transition: all 0.25s ease;
+}
+
+.social-btn i {
+  color: white;
+  font-size: 22px;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px red;
+}
+
+/* PRZYCISK NEXT */
+.next-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  background: linear-gradient(145deg, #ff1a1a, #990000);
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 0 15px rgba(255,0,0,0.6);
+}
+
+.next-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 25px red;
+}
+body {
+  animation: pageIn 0.6s ease;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  /* LOGO */
+  .logo {
+    font-size: 28px;
+    top: 30px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* MODAL */
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  /* BUTTONY (język / waluta) */
+  .options {
+    flex-direction: column;
+  }
+
+  .options button {
+    width: 100%;
+  }
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 25px;
+  border-radius: 16px;
+
+  background: linear-gradient(145deg, #ff0000, #300000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+  overflow: hidden;
+}
+
+/* LOGO */
+.icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 8px red);
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT 🔥 */
+.icon:hover img {
+  transform: scale(1.1);
+}
+
+  /* SOCIALS (ukryj albo zmniejsz) */
+  .socials {
+    right: 10px;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* PRZYCISK */
+  .next-btn {
+    width: 100%;
+  }
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  /* LOGO */
+  .logo {
+    font-size: 28px;
+    top: 30px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* MODAL */
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  /* BUTTONY (język / waluta) */
+  .options {
+    flex-direction: column;
+  }
+
+  .options button {
+    width: 100%;
+  }
+
+  /* IKONA */
+  .icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  /* SOCIALS (ukryj albo zmniejsz) */
+  .socials {
+    right: 10px;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* PRZYCISK */
+  .next-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  .section p {
+    font-size: 10px;
+  }
+}
+
