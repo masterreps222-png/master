@@ -38,7 +38,7 @@ const productsData = [
         rating: 9, 
         tags:["Spodnie", "Bagy " , " Dresy" , "Budget" , ],
         link:"https://www.kakobuy.com/item/details?url=https%3A%2F%2Fdetail.1688.com%2Foffer%2F978152783054.html&affcode=master15",
-        image:"https://cbu01.alicdn.com/img/ibank/O1CN01BfWkD12GgfVFZqWP3_!!2218626059045-0-cib.jpg"
+        image:"https://cbu01.alicdn.com/img/ibank/O1CN013aKcT52GgfVGRKqmG_!!2218626059045-0-cib.jpg_400x400q85.jpg_.webp"
     } 
 
 ];
