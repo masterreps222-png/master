@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>MASTERREPS | product database</title>
+    <title>|Master × Reps|</title>
     <!-- Google Fonts + Font Awesome 6 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -41,6 +41,22 @@
             100% { transform: translate(250px, 180px); }
         }
 
+        /* Linki w logo - biały tekst, po najechaniu czerwony */
+        .link-white {
+            text-decoration: none;  /* usuwa podkreślenie */
+            transition: color 0.2s ease;
+        }
+
+        .link-white h3,
+        .link-white h5 {
+            color: #ffffff;  /* biały kolor tekstu */
+            transition: color 0.2s ease;
+        }
+
+        .link-white:hover h3,
+        .link-white:hover h5 {
+            color: #ff3333;  /* czerwony po najechaniu */
+        }
         .app-container {
             position: relative;
             z-index: 2;
@@ -520,6 +536,12 @@
 <div class="app-container">
     <div class="logo">
         <h1>Master Reps</h1>
+        
+            <h3>Code: master15 - 15$ ship kakobuy</h3>
+        </a>
+        <a href="https://ikako.vip/r/master15" target="_blank" class="link-white">
+            <h5>Kliknij 👉aby zarejstrowac sie po 400$ na ship w kuponach </h5>
+        </a>
     </div>
         <!-- PASEK NAWIGACJI -->
         <div class="top-nav">
