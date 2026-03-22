@@ -30,16 +30,6 @@ const productsData = [
         link:"https://ikako.vip/w52xzt",
         image:"https://si.geilicdn.com/wdseller1845163825-563300000198f83abd420a22d58f_1179_1179.jpg"
     },
-   {
-        id: 5,
-        name:" Bagy dresy nike ",
-        categoryId:"spodnie" , 
-        cnyPrice: 40,
-        rating: 9, 
-        tags:["Spodnie", "Bagy " , " Dresy" , "Budget" , ],
-        link:"https://www.kakobuy.com/item/details?url=https%3A%2F%2Fdetail.1688.com%2Foffer%2F978152783054.html&affcode=master15",
-        image:"https://cbu01.alicdn.com/img/ibank/O1CN013aKcT52GgfVGRKqmG_!!2218626059045-0-cib.jpg_400x400q85.jpg_.webp"
-    } 
 
 ];
 
